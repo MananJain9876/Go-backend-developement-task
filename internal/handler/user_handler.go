@@ -65,7 +65,7 @@ func (h *UserHandler) GetUser(c *fiber.Ctx) error {
 		h.logger.Error("failed to get user", zap.Error(err))
 		return fiber.NewError(fiber.StatusInternalServerError, "failed to get user")
 	}
-
+///agee is calculated here 
 	age := models.CalculateAge(user.DOB, time.Now().UTC())
 	resp := models.UserResponse{
 		ID:   user.ID,
